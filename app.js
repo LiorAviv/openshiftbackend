@@ -1,7 +1,10 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const PORT = 8000;
+app.use(cors());
 app.get("/getlocations", (req, res) => {
+  console.log("lolo")
   res.status(200);
   res.send([
     { id: 1, lat: 36.4117, lon: 35.0818 },
