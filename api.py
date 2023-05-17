@@ -1,15 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return """
-    <h1>Hello heroku</h1>
-    <p>It is currently .</p>
-
-    <img src="http://loremflickr.com/600/400">
-    """
+    return render_template('index.html')
 
 @app.route("/getlocations")
 def getlocations():
