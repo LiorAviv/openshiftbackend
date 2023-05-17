@@ -4,11 +4,20 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return "Hello, World!"
+    return """
+    <h1>Hello heroku</h1>
+    <p>It is currently .</p>
 
-@app.route("/e")
-def e():
-    return "e"
+    <img src="http://loremflickr.com/600/400">
+    """
+
+@app.route("/getlocations")
+def getlocations():
+    return [
+    { 'id': 1, 'lat': 36.4117, 'lon': 35.0818 },
+    { 'id': 2, 'lat': 37.2799, 'lon': 37.1297 },
+    { 'id': 3, 'lat': 38.2799, 'lon': 37.1297 },
+    ]
 
 @app.route("/ee")
 def ee():
